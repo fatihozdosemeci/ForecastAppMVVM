@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/IP/UdpTcpSenderReceiver" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/IP/Udp_tcp_sender" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ProgeManage" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/mvvmtutorial2" vcs="Git" />
+  </component>
+</project>
