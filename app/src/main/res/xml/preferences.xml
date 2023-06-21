@@ -6,7 +6,7 @@
             android:key="USE_DEVICE_LOCATION"
             android:title="Use device location"
             android:summary="Allow the app to get your location"
-            android:defaultValue="true"
+            android:defaultValue="false"
             android:disableDependentsState="true"/>
 
         <EditTextPreference

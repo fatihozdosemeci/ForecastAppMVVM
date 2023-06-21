@@ -66,17 +66,23 @@ class CurrentWeatherFragment : ScopedFragment(), KodeinAware {
         GlobalScope.launch(Dispatchers.Main) {
             weatherNetworkDataSource.fetchCurrentWeather("New York")
         }*/
-
-
     }
 
     private fun bindUI() = launch{
         val currentWeather = viewModel.weather.await()
+
+        val weatherLocation = viewModel.weatherLocation.await()
+
+        weatherLocation.observe(viewLifecycleOwner, Observer { location ->
+            if(location == null) return@Observer
+            updateLocation(location.name)
+
+        })
+
         currentWeather.observe(viewLifecycleOwner, Observer {
             if(it == null) return@Observer
             val group_loading = view?.findViewById<Group>(R.id.group_loading)
             group_loading?.visibility = View.GONE
-            updateLocation("New York")
             updateDateToToday()
             updateTemperatures(it.temperature,it.feelslike)
             updateCondition(it.weatherDescriptions)
